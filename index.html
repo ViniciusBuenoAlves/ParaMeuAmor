@@ -12,34 +12,40 @@
             margin: 0;
             padding: 0;
             text-align: center;
+            overflow-x: hidden; /* Para evitar o deslizamento horizontal */
         }
         .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
+            max-width: 100%;
+            margin: 20px auto;
+            padding: 15px;
             background-color: #8a2be2;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
             display: none;
+            width: 100%; /* Ajusta a largura para 100% */
         }
         .active {
             display: block;
         }
         h1 {
             color: #ff4081;
+            font-size: 1.5em; /* Tamanho reduzido de título */
+            margin-bottom: 10px;
         }
         .button {
             padding: 15px 30px;
-            font-size: 18px;
+            font-size: 16px; /* Tamanho reduzido para botões */
             background-color: #ff80ab;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             margin: 10px;
+            width: 80%; /* Botões ocupam 80% da largura */
+            max-width: 300px; /* Limita o tamanho máximo dos botões */
         }
 
-       .move-button {
+        .move-button {
             position: absolute;
             left: 62%;
             top: 21%;
@@ -47,6 +53,49 @@
         }
         .button:hover {
             background-color: #ff4081;
+        }
+
+        /* Ajuste de fontes e tamanhos para telas menores */
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 1.2em;
+            }
+            
+            .button {
+                font-size: 14px;
+                padding: 12px 25px;
+            }
+            
+            .container {
+                padding: 10px;
+                margin: 15px;
+            }
+            
+            .input-container input {
+                width: 90%;
+                max-width: 300px;
+            }
+        }
+
+        /* Para telas muito pequenas */
+        @media screen and (max-width: 480px) {
+            h1 {
+                font-size: 1em;
+            }
+            
+            .button {
+                font-size: 12px;
+                padding: 10px 20px;
+            }
+            
+            .input-container input {
+                width: 85%;
+            }
+            
+            .container {
+                padding: 8px;
+                margin: 10px;
+            }
         }
     </style>
 </head>
@@ -172,23 +221,29 @@
             No fundo, eu sabia, era obra divina,<br>
             A partir daquele dia, minha história mudaria.<br>
             Pois estava prestes a conhecer, enfim,<br>
-            O grande amor da minha vida.<br><br>
+            O grande amor da minha vida.<br>
+        </p>
     </div>
-
+    
     <script>
+        // Função para navegar entre páginas
         function goToPage(pageId) {
-            document.querySelectorAll('.container').forEach(page => page.classList.remove('active'));
+            var pages = document.querySelectorAll('.container');
+            pages.forEach(function(page) {
+                page.classList.remove('active');
+            });
             document.getElementById(pageId).classList.add('active');
         }
-        
+
         function moveButton() {
             let button = document.getElementById("moveButton");
             let x = Math.random() * (window.innerWidth - button.clientWidth);
             let y = Math.random() * (window.innerHeight - button.clientHeight);
+    
             button.style.left = `${x}px`;
             button.style.top = `${y}px`;
         }
-    
+
     </script>
 </body>
 </html>
