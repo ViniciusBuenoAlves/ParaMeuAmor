@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reconquistando Meu Amor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #8a2be2;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        h1 {
+            color: #ff4081;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #ff80ab;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+       .move-button {
+            position: absolute;
+            left: 62%;
+            top: 21%;
+            transform: translate(-50%, -50%);
+        }
+        .button:hover {
+            background-color: #ff4081;
+        }
+    </style>
+</head>
+<body>
+    <div id="loginPage" class="container active">
+        <h1>Bem-vindo, amor da minha vida!</h1>
+        <p>Antes de começarmos, quero que saiba o quanto te amo! ❤️</p>
+        <p>Ops... esqueci de criar a tela de usuario, então seus acessos estão logo abaixo, meu amor ❤️</p>
+        <form>
+           <div class="input-container">
+                <input type="text" placeholder="Seu lindo nome aqui" id="username" required oninput="validateLogin()"><br>
+            </div>
+            <input type="password" placeholder="Sua senha" id="password" required><br>
+            <p><strong>Usuário:</strong> Sua futura noiva </p>
+            <p><strong>Senha:</strong> 09/11/2024</p>
+            <button type="button" class="button" onclick="goToPage('introPage')">Entrar</button>
+        </form>
+    </div>
+    
+    <div id="introPage" class="container">
+        <h1>Amor, eu gostaria de contar algumas histórias para você...</h1>
+        <p>Tu aceitaria ler elas? Fiz especialmente para você! </p>
+        <button class="button" onclick="goToPage('choicesPage')">Sim, meu amor, quero lê-las!</button>
+    </div>
+    
+    <div id="choicesPage" class="container">
+        <h1>Hmmm, que bela escolha você fez, meu amorrr!</h1>
+        <p>Um pouco de história é muito bom, mas agora escolha um, meu bem:</p>
+        <button class="button" onclick="goToPage('celebrationPage')">Eu te amo mais</button>
+        <button class="button" onclick="goToPage('wrongChoicePage')">Você me ama mais</button>
+    </div>
+    
+    <div id="celebrationPage" class="container">
+        <h1> 🎉Parabéns, meu amor!🎉 </h1>
+        <p>Você escolheu a resposta certa! Eu sabia que você iria acertar, meu dengo. 😎❤️</p>
+        <button class="button" onclick="goToPage('feelingsPage')">Continuar</button>
+    </div>
+    
+ <div id="wrongChoicePage" class="container">
+        <h1>Poxa, meu amor...</h1>
+        <p>Todo mundo sabe que sou eu!🥺🥺🥺</p>
+        <div style="display: flex; justify-content: center; gap: 10px;">
+            <button class="button" onclick="goToPage('choicesPage')">Tentar novamente😜</button>
+            <button id="moveButton" class="button move-button" onclick="moveButton()">Isso não é verdade😡</button>
+        </div>
+    </div>
+    
+    <div id="feelingsPage" class="container">
+        <h1>Eu queria expressar meus mais verdadeiros sentimentos e o amor que sinto por ti. Tu não faz ideia do quanto és importante para mim. Nunca quis te fazer chorar por algo de ruim que fiz, e isso me matou por dentro. Mas tenha certeza de que aquilo nunca foi e nunca será uma opção.
+
+            Eu te amo demais. Tu és a mulher da minha vida. Quando digo isso, é a mais pura verdade, saindo da minha boca e do meu coração. Nunca duvide disso.
+            
+            Você me faz um bem danado. Sou um homem completamente realizado ao seu lado. Se em apenas quatro meses foi assim, estou ansioso para passar o resto da minha vida desse jeito com você.</h1>
+        <button class="button" onclick="goToPage('chaptersPage')">Continuar</button>
+    </div>
+    
+    <div id="chaptersPage" class="container">
+        <h1>Bom, meu amor, vamos começar! Essa será uma sequência de histórias, e prometo que vai ser bem legal. Fiz com o maior carinho para você. Se tiver algum feedback de melhoria, por favor, me avise.
+
+            (Peço perdão pela plataforma simples, fiz na correria kkkk, mas ela vai melhorando conforme os capítulos forem saindo.)
+            
+            Então... se não quiser perder nenhum capítulo, fica atenta ao seu WhatsApp! Toda manhã, vai chegar um link fresquinho para você ler um novo capítulo. Só mais uma coisa, eu te amo muitooooooo</h1>
+        <button class="button" onclick="goToPage('chapterPage')">Começar a ler</button>
+    </div>
+    
+    <div id="chapterPage" class="container">
+        <h1>Capítulo 1: O Começo</h1>
+        <p> No dia dezenove de setembro, tudo mudou, <br>
+            Sob a luz da noite, a sorte soprou <br>
+            Uma conversa tímida começou, <br>
+            e ali, sem saber, meu coração te encontrou. <br><br>
+
+            Teus cabelos, fios de poesia, <br>
+            Dançam suaves, brilham ao sol. <br>
+            Teu rosto, moldado com maestria, <br>
+            obra divina, perfeita em farol. <br><br>
+
+            Teu nome? Thainá, doce melodia, <br>
+            pronunciá-lo já me faz sorrir. <br>
+            Mas eu, perdido em minha timidez, <br>
+            quase te deixei partir. <br><br>
+
+            As palavras erradas, o medo no tom, <br>
+            Sem querer, dei a entender <br>
+            Que amizade era tudo o que eu via, <br>
+            Quando na verdade, era amor a nascer. <br><br>
+
+            Por pouco, quase te perdi, <br>
+            um fio separava o fim do recomeço. <br>
+            Mas a Deues, sábio e generoso, <br>
+            Me deu uma chance, guiou meu endereço. <br><br>
+
+            No dia vinte e oito de setembro, o destino sorriu, <br>
+            o grande momento enfim surgiu. <br>
+            Dentro da igreja, entre a bateria e a fé, <br>
+            Eu soube que um novo caminho se abriu. <br><br>
+
+            "Se eu te chamasse pra sair, aceitaria?" <br>
+            Meu coração batia, esperando o final. <br>
+            E tua resposta, como música divina, <br>
+            fez o mundo girar, fez tudo ser real. <br><br>
+
+            "Sim", disseste, e eu toquei mais feliz, <br>
+            cada baquetada, um pulsar do coração. <br>
+            Naquela noite, a alegria me cobria, <br>
+            e a felicidade, minha mais bela canção. <br><br>
+
+            Então, finalmente, estava marcado, <br>
+            dia cinco de outubro era o tão esperado. <br>
+            Enfim, conheceria quem tanto me encantou, <br>
+            E quem nos sonhos já me ganhou. <br><br>
+
+            E mesmo sem antes te ver, eu sabia, <br>
+            mal percebia, mas já era teu. <br>
+            Louquinho por ti, sem nem te tocar, <br>
+            E no teu amor, meu mundo viveu. <br><br>
+
+            Enfim, saí da igreja e tinha um encontro marcado, <br>
+            Com aquela garota linda que tinha me encantado. <br>
+            Não via a hora de chegar o próximo sábado, <br>
+            O coração acelerado, o sorriso escancarado. <br><br>
+
+            No fundo, eu sabia, era obra divina,<br>
+            A partir daquele dia, minha história mudaria.<br>
+            Pois estava prestes a conhecer, enfim,<br>
+            O grande amor da minha vida.<br><br>
+    </div>
+
+    <script>
+        function goToPage(pageId) {
+            document.querySelectorAll('.container').forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+        
+        function moveButton() {
+            let button = document.getElementById("moveButton");
+            let x = Math.random() * (window.innerWidth - button.clientWidth);
+            let y = Math.random() * (window.innerHeight - button.clientHeight);
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+    
+    </script>
+</body>
+</html>
