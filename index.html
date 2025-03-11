@@ -47,10 +47,14 @@
 
         .move-button {
             position: absolute;
-            left: 62%;
-            top: 30%; /* Ajuste esse valor conforme necessário */
+            left: 62%; /* Posição horizontal padrão */
+            top: 30%; /* Posição vertical padrão */
             transform: translate(-50%, -50%);
-}
+            /* Defina limites de posição */
+            max-width: 90%; /* Limite de largura */
+            max-height: 90%; /* Limite de altura */
+        }
+
         .button:hover {
             background-color: #ff4081;
         }
